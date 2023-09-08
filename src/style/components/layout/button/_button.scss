@@ -1,0 +1,42 @@
+.submit {
+    width: max-content;
+    margin-block: 1rem;
+    margin-right: 0.5rem;
+    background-color: $primaryColor;
+    border: none;
+    font-size: $md-fontSize;
+    font-weight: 600;
+    color: $fontColor;
+    padding: $base-padding * 0.3;
+    cursor: pointer;
+}
+
+.disabled {
+    width: max-content;
+    font-size: $md-fontSize;
+    font-weight: 600;
+    padding: $base-padding * 0.3;
+    margin-block: 1rem;
+    margin-right: 0.5rem;
+    background-color: $secondaryColor;
+    border: 1px solid $primaryColor;
+    cursor: no-drop;
+}
+
+.default {
+    width: max-content;
+    background-color: transparent;
+    padding: $base-padding * 0.3;
+    font-weight: 600;
+    font-size: $md-fontSize;
+    margin-block: 1rem;
+    margin-right: 0.5rem;
+    color: $secondFontColor;
+    border: 1px solid $secondaryColor;
+    cursor: pointer;
+
+    &:hover {
+        color: $fontColor;
+        border: 1px solid $primaryColor;
+    }
+}
