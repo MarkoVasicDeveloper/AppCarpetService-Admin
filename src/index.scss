@@ -1,0 +1,21 @@
+@import './style/variables';
+@import './style/mixins';
+@import './style/components/layout/input/input';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+section {
+  width: 100vw;
+  height: 100vh;
+  padding: $base-padding;
+}
+
+.container {
+  width: clamp(300px, 70%, 700px);
+  border: 1px solid red;
+  padding: $base-padding;
+}
