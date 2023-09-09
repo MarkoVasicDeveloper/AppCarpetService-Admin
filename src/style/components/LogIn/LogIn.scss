@@ -1,4 +1,26 @@
 #logIn {
     @include flex;
     @include background('./assets/background-log-in-mini.webp');
+
+    h1 {
+        position: absolute;
+        top: 2rem;
+        left: 2rem;
+        font-size: $xl-fontSize;
+    }
+
+    h2 {
+        font-size: $xl-fontSize;
+    }
+
+    .container {
+        position: relative;
+
+        .social {
+            position: absolute;
+            top: -2.5rem;
+            right: 0;
+        }
+    }
+
 }

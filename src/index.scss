@@ -24,7 +24,6 @@ section {
 .container {
   width: clamp(300px, 50%, 500px);
   padding: $base-padding;
-  border: 1px solid $primaryColor;
   border-radius: $border-radius;
   padding: $base-padding;
   background-color: $background;
@@ -37,5 +36,5 @@ h2 {
   color: $secondFontColor;
   margin: 1rem;
   text-shadow: 2px 2px 2px #222;
-  font-family: $secondaryFontFamily;
+  font-family: $thirdFontFamily;
 }

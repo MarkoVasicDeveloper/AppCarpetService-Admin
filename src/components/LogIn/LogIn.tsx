@@ -1,8 +1,10 @@
 import { faMailBulk, faSignature } from '@fortawesome/free-solid-svg-icons';
+import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
 import Input from '../layout/input/Input';
 import { useInputText } from '../../hooks/useInputText';
 import { useEffect, useState } from 'react';
 import { Button } from '../layout/button/Button';
+import { SocialLink } from '../layout/social/SocialLink';
 
 export default function LogIn(): JSX.Element {
     const { data, edit } = useInputText({});
@@ -16,8 +18,13 @@ export default function LogIn(): JSX.Element {
 
     return (
         <section id="logIn">
+            <h1>Washer - Administrator Log in</h1>
             <div className="container">
                 <h2>Ulogujte se</h2>
+                <div className="social">
+                    <SocialLink icon={faFacebook} link={"facebook.com"} />
+                    <SocialLink icon={faInstagram} link={"instagram.com"} />
+                </div>
                 <Input id={'username'} icon={faMailBulk} label='Korisnicko ime' onChangeInput={edit} name={'username'} placeholder='Korisnicko ime' required />
                 <Input id={'password'} icon={faSignature} label='Lozinka' onChangeInput={edit} name={'password'} placeholder='Lozinka' required />
                 <Button title={'Uloguj se'} onClickFunction={() => { }} type='submit' disabled={disabled} />
