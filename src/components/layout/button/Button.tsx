@@ -1,20 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { type ReactElement, useLayoutEffect, useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 
 interface ButtonProps {
     type?: 'submit' | 'button'
     title?: string
     disabled?: boolean | undefined
-    onClickFunction: ((param: any) => void) | ((param: any) => Promise<void>)
+    onClickFunction: ((param: any) => void) | ((param: any) => Promise<void>) | ((data: Record<string, any>) => void)
     implementClass?: string
     titleFusnote?: string
     default?: boolean
     icon?: IconDefinition
 }
 
-export function Button(data: ButtonProps): ReactElement {
+export function Button(data: ButtonProps) {
     const [implementClasses, setImplementClasses] = useState('')
 
     useLayoutEffect(() => {

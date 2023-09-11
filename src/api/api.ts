@@ -1,16 +1,17 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import axios, { AxiosResponse, AxiosRequestConfig } from "axios";
 
 export default function api(
     path: string,
     method: "get" | "post" | "patch" | "delete",
-    body: Record<string, number> | undefined,
+    body: Record<string, any> | undefined,
     role: "user" | "administrator" = "user"
 ) {
     return new Promise<ApiResponse>((resolve) => {
         const requestData = {
             method: method,
             url: path,
-            baseURL: "http://localhost:8080",
+            baseURL: "https://washersoftware.com",
             data: JSON.stringify(body),
             headers: {
                 "Content-Type": "application/json",
@@ -51,11 +52,11 @@ export default function api(
 
 export interface ApiResponse {
     status: "ok" | "error" | "login";
-    data: unknown;
+    data: Record<string, unknown> | null;
 }
 
 async function responseHandler(
-    res: AxiosResponse<unknown>,
+    res: AxiosResponse<Record<string, unknown>>,
     resolve: (value: ApiResponse) => void
 ) {
     if (res.status < 200 || res.status >= 300) {
@@ -122,7 +123,7 @@ async function refreshToken(
     const refreshTokenRequestData: AxiosRequestConfig = {
         method: "post",
         url: path,
-        baseURL: "http://localhost:8080",
+        baseURL: "https://washersoftware.com",
         data: JSON.stringify(data),
         headers: {
             "Content-Type": "application/json",

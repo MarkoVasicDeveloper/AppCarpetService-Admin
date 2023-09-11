@@ -5,9 +5,11 @@ import { useInputText } from '../../hooks/useInputText';
 import { useEffect, useState } from 'react';
 import { Button } from '../layout/button/Button';
 import { SocialLink } from '../layout/social/SocialLink';
+import { useLogIn } from '../../hooks/useLogIn';
 
 export default function LogIn(): JSX.Element {
     const { data, edit } = useInputText({});
+    const { sendData, message } = useLogIn();
 
     const [disabled, setDisabled] = useState(true);
 
@@ -27,8 +29,9 @@ export default function LogIn(): JSX.Element {
                 </div>
                 <Input id={'username'} icon={faMailBulk} label='Korisnicko ime' onChangeInput={edit} name={'username'} placeholder='Korisnicko ime' required />
                 <Input id={'password'} icon={faSignature} label='Lozinka' onChangeInput={edit} name={'password'} placeholder='Lozinka' required />
-                <Button title={'Uloguj se'} onClickFunction={() => { }} type='submit' disabled={disabled} />
+                <Button title={'Uloguj se'} onClickFunction={() => sendData(data)} type='submit' disabled={disabled} />
             </div>
+            <div className="message">{message}</div>
         </section>
     )
 }
