@@ -1,17 +1,20 @@
+import { useEffect, useState } from 'react';
+
 import { faMailBulk, faSignature } from '@fortawesome/free-solid-svg-icons';
 import { faFacebook, faInstagram } from "@fortawesome/free-brands-svg-icons";
+
 import Input from '../layout/input/Input';
-import { useInputText } from '../../hooks/useInputText';
-import { useEffect, useState } from 'react';
-import { Button } from '../layout/button/Button';
 import { SocialLink } from '../layout/social/SocialLink';
+import { Button } from '../layout/button/Button';
+
+import { useInputText } from '../../hooks/useInputText';
 import { useLogIn } from '../../hooks/useLogIn';
 
 export default function LogIn(): JSX.Element {
+    const [disabled, setDisabled] = useState(true);
+
     const { data, edit } = useInputText({});
     const { sendData, message } = useLogIn();
-
-    const [disabled, setDisabled] = useState(true);
 
     useEffect(() => {
         if (!data.username || !data.password) return setDisabled(true);
