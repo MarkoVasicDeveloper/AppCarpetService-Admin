@@ -11,12 +11,12 @@ export function Modal({ open, children, close }: ModalProps): React.ReactPortal 
     if (!open) return null;
 
     return ReactDom.createPortal(
-        <section id="modal">
+        <div id="modal">
             <Button title="Close" onClickFunction={close} implementClass="fixed" />
             <div className="modal-content">
                 {children}
             </div>
-        </section>,
+        </div>,
         document.getElementById('portal') as HTMLDivElement
     )
 }

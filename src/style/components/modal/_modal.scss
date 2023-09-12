@@ -8,7 +8,6 @@
     bottom: 0;
     @include flex;
     background: #000;
-    backdrop-filter: blur(20px);
     z-index: 10;
     animation: show-modal 500ms ease forwards;
 
