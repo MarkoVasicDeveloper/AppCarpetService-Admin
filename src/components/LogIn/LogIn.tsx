@@ -33,8 +33,8 @@ export default function LogIn(): JSX.Element {
                 <Input id={'username'} icon={faMailBulk} label='Korisnicko ime' onChangeInput={edit} name={'username'} placeholder='Korisnicko ime' required />
                 <Input id={'password'} icon={faSignature} label='Lozinka' onChangeInput={edit} name={'password'} placeholder='Lozinka' required />
                 <Button title={'Uloguj se'} onClickFunction={() => sendData(data)} type='submit' disabled={disabled} />
+                <div className="error-message">{message}</div>
             </div>
-            <div className="message">{message}</div>
         </section>
     )
 }

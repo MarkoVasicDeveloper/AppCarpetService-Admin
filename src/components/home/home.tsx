@@ -1,5 +1,7 @@
+import Nav from "../nav/nav";
+
 export default function Home() {
     return (
-        <section>Home</section>
+        <><Nav /><section>Home</section></>
     )
 }
