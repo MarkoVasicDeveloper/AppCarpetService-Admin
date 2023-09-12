@@ -4,7 +4,7 @@ import { headerProps } from '../../misc/header';
 
 export default function Nav() {
     return (
-        <div className="navigation">
+        <header className="navigation">
             <nav>
                 <ul>
                     {
@@ -16,6 +16,6 @@ export default function Nav() {
                     }
                 </ul>
             </nav>
-        </div>
+        </header>
     )
 }
