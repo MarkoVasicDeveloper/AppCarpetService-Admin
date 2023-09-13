@@ -4,7 +4,7 @@
     align-items: $align;
 }
 
-@mixin background ($url) {
+@mixin background ($url, $padding: 7) {
     min-height: 100vh;
     background-image: url($url);
     background-size: cover;
@@ -12,6 +12,6 @@
     background-color: #000000cc;
     background-blend-mode: darken;
     padding-bottom: $base-padding;
-    padding-top: $base-padding * 3;
+    padding-top: $base-padding * $padding;
     color: $fontColor;
 }

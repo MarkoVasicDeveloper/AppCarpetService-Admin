@@ -1,6 +1,6 @@
 #logIn {
     @include flex;
-    @include background('./assets/background-log-in-mini.webp');
+    @include background('./assets/background-log-in-mini.webp', 0);
 
     h1 {
         position: absolute;
@@ -15,6 +15,12 @@
 
     .container {
         position: relative;
+        width: clamp(300px, 50%, 500px);
+        padding: $base-padding;
+        border-radius: $border-radius;
+        padding: $base-padding;
+        padding-top: $base-padding * 2;
+        background-color: $background;
 
         .social {
             position: absolute;

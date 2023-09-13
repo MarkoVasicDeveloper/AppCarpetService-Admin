@@ -7,6 +7,7 @@ import { headerProps } from "../../misc/header";
 
 import { Button } from "../layout/button/Button";
 import { Modal } from "../modal/modal";
+import LogOut from "../logOut/logOut";
 
 
 export default function Nav(): JSX.Element {
@@ -47,6 +48,7 @@ export default function Nav(): JSX.Element {
                     </nav>
                 </div>
             </Modal>
+            <LogOut />
         </header>
     );
 }

@@ -27,3 +27,4 @@ export const { setAdmin } = adminSlice.actions;
 export default adminSlice.reducer;
 
 export const selectAdminToken = (state: RootState) => state.admin.token;
+export const selectAdminIdentity = (state: RootState) => state.admin.identity;

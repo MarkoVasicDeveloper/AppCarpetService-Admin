@@ -5,6 +5,7 @@
 @import './style/components/LogIn/LogIn.scss';
 @import './style/components/nav/nav.scss';
 @import './style/components/modal/modal';
+@import './style/components/logOut/logOut';
 
 * {
   margin: 0;
@@ -20,15 +21,7 @@ section {
   width: 100vw;
   height: 100vh;
   padding: $base-padding;
-  @include background('./assets/hero-bg.webp')
-}
-
-.container {
-  width: clamp(300px, 50%, 500px);
-  padding: $base-padding;
-  border-radius: $border-radius;
-  padding: $base-padding;
-  background-color: $background;
+  @include background('./assets/hero-bg.webp');
 }
 
 h1,
