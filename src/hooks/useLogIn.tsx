@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-import api, { ApiResponse } from "../api/api";
+import api, { ApiResponse, saveRefreshToken, saveToken } from "../api/api";
 
 import { useAppDispatch } from './useAppDispatch';
 import { useNavigate } from 'react-router-dom';
@@ -24,6 +24,9 @@ export function useLogIn() {
             .then((res: ApiResponse) => {
                 if (res.status !== 'ok') return setMessage('Network error')
                 if (res.data?.text === 'error' && res.data.statusCode === -1001 || res.data?.statusCode === -2002) return setMessage('Lozinka ili mail nisu tacni');
+
+                saveToken('administrator', res.data?.token as any);
+                saveRefreshToken('administrator', res.data?.refreshToken as any);
 
                 dispatch(setAdmin({
                     id: res.data?.id,

@@ -1,8 +1,10 @@
 import { type PreloadedState, combineReducers, configureStore } from "@reduxjs/toolkit";
 import adminSlice from "./administrator/adminSlice";
+import simpleReportSlice from "./report/reportSlice";
 
 const rootReducer = combineReducers({
-    admin: adminSlice
+    admin: adminSlice,
+    simpleReport: simpleReportSlice,
 })
 
 export const setupStore = (preloadedState?: PreloadedState<RootState>) =>

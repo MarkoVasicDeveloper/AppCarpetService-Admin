@@ -21,7 +21,7 @@ section {
   width: 100vw;
   height: 100vh;
   padding: $base-padding;
-  @include background('./assets/hero-bg.webp');
+  @include background('./assets/hero-bg.webp', 9);
 }
 
 h1,
